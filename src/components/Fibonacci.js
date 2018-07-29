@@ -25,13 +25,11 @@ class Fibonacci extends Component {
     const { fibonacciN, result} = this.state;
     return (
       <div>
-        <form onSubmit={(e) => this.calculareFibonacci(e)}>
-          <input type="number" value={fibonacciN} onChange={(e) => this.handleChange({fibonacciN : e.target.value})}/>
-          <button type="submit">Calculate</button>
+        <form onSubmit={(e) => this.calculareFibonacci(e)} id="formFibonacci">
+          <input type='number' value={fibonacciN} onChange={(e) => this.handleChange({fibonacciN : e.target.value})} id='fibonacciNum'/>
+          <button type='submit' id='submit'>Calculate</button>
         </form>
-        <div>
-          {result}
-        </div>
+        <div id='FibonacciNth'>{result}</div>
       </div>
     )
   }
