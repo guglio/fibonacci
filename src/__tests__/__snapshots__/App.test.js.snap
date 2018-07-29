@@ -19,20 +19,25 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <form
+          id="formFibonacci"
           onSubmit={[Function]}
 >
           <input
+                    id="fibonacciNum"
                     onChange={[Function]}
                     type="number"
                     value={0}
           />
           <button
+                    id="submit"
                     type="submit"
           >
                     Calculate
           </button>
 </form>,
-        <div />,
+        <div
+          id="FibonacciNth"
+/>,
       ],
     },
     "ref": null,
@@ -44,16 +49,19 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <input
+              id="fibonacciNum"
               onChange={[Function]}
               type="number"
               value={0}
 />,
             <button
+              id="submit"
               type="submit"
 >
               Calculate
 </button>,
           ],
+          "id": "formFibonacci",
           "onSubmit": [Function],
         },
         "ref": null,
@@ -63,6 +71,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "id": "fibonacciNum",
               "onChange": [Function],
               "type": "number",
               "value": 0,
@@ -77,6 +86,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Calculate",
+              "id": "submit",
               "type": "submit",
             },
             "ref": null,
@@ -92,6 +102,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 0,
+          "id": "FibonacciNth",
         },
         "ref": null,
         "rendered": 0,
@@ -108,20 +119,25 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <form
+            id="formFibonacci"
             onSubmit={[Function]}
 >
             <input
+                        id="fibonacciNum"
                         onChange={[Function]}
                         type="number"
                         value={0}
             />
             <button
+                        id="submit"
                         type="submit"
             >
                         Calculate
             </button>
 </form>,
-          <div />,
+          <div
+            id="FibonacciNth"
+/>,
         ],
       },
       "ref": null,
@@ -133,16 +149,19 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <input
+                id="fibonacciNum"
                 onChange={[Function]}
                 type="number"
                 value={0}
 />,
               <button
+                id="submit"
                 type="submit"
 >
                 Calculate
 </button>,
             ],
+            "id": "formFibonacci",
             "onSubmit": [Function],
           },
           "ref": null,
@@ -152,6 +171,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "id": "fibonacciNum",
                 "onChange": [Function],
                 "type": "number",
                 "value": 0,
@@ -166,6 +186,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Calculate",
+                "id": "submit",
                 "type": "submit",
               },
               "ref": null,
@@ -181,6 +202,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": 0,
+            "id": "FibonacciNth",
           },
           "ref": null,
           "rendered": 0,
