@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './header/Header';
-import Fibonacci from './Fibonacci';
+import Fibonacci from './fibonacci/Fibonacci';
 import Footer from './footer/Footer';
 
 class App extends Component {
