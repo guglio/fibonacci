@@ -1,24 +1,20 @@
-import * as math from 'mathjs';
+import * as math from 'mathjs'; // handle the BigNumber
 
 math.config({
   number: 'BigNumber', // Set type of number to be 'BigNumber'
   precision: 20 // Number of significant digits for BigNumbers
 })
 
-const FibonacciNth = ( n = 2 ) => {
-  var num = parseInt(n,10);
-
-  if(num < 2){
-    return "Enter a number >= 2";
-  }
-  if(!Number.isInteger(num)){
-    return "Not an integer";
-  }
-  let [curr, next] = [1, 0];
+const FibonacciNth = ( num = 2 ) => {
+  // calculate the nth on the Fibonacci sequence with iterable object
+  let [curr, prev] = [1, 0];
   while (num-- > 0) {
-    [curr, next] = [math.add(math.bignumber(curr), math.bignumber(next)), math.bignumber(curr)];
+    // I used math.js library to handle bignumbers (if n > 1477, the result was Infinity)
+    // the following formula is equal to:
+    // [curr, prev] = [curr + prev, curr];
+    [curr, prev] = [math.add(math.bignumber(curr), math.bignumber(prev)), math.bignumber(curr)];
   }
-  return next;
+  return prev;
 };
 
 export default FibonacciNth;
