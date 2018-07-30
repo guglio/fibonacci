@@ -30,10 +30,15 @@ describe('<Fibonacci />', () => {
       it('is present', () => {
         expect(submitButton.exists()).toBe(true)
       });
-      it('should submit the form and get a result', () => {
+      it('should submit the form and get a result message', () => {
         inputNumber.simulate('change', {target: {value: 10}});
         form.simulate('submit', { preventDefault () {} });
-        expect(`${wrapper.state('result')}`).toEqual("55");
+        expect(typeof wrapper.state('message')).toBe('string');
+      });
+      it('should submit the form and get the result as F(n) = nth', () => {
+        inputNumber.simulate('change', {target: {value: 10}});
+        form.simulate('submit', { preventDefault () {} });
+        expect(wrapper.state('message')).toBe('F(10) = 55');
       });
     });
     describe('Reset button', () => {
@@ -42,7 +47,7 @@ describe('<Fibonacci />', () => {
       });
       it('should reset the form to defaults', () => {
         resetButton.simulate('click');
-        expect(wrapper.state('result')).toEqual(0);
+        expect(wrapper.state('message')).toEqual('');
         expect(wrapper.state('fibonacciN')).toEqual(2);
       });
     });
