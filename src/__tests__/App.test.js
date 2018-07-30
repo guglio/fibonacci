@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 
 import App from '../components/App';
 
-import Header from '../components/Header';
+import Header from '../components/header/Header';
 import Fibonacci from '../components/Fibonacci';
-import Footer from '../components/Footer';
+import Footer from '../components/footer/Footer';
 
 describe('App', () => {
   it('renders without crashing', () => {

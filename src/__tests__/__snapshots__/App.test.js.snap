@@ -239,10 +239,58 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Footer test",
+      "children": <p
+        className="credits"
+>
+        Created by 
+        <a
+                href="//guglielmo-turco.com"
+                rel="noopener noreferrer"
+                target="_blank"
+        >
+                Guglielmo Turco
+        </a>
+</p>,
+      "className": "footer",
     },
     "ref": null,
-    "rendered": "Footer test",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "Created by ",
+          <a
+            href="//guglielmo-turco.com"
+            rel="noopener noreferrer"
+            target="_blank"
+>
+            Guglielmo Turco
+</a>,
+        ],
+        "className": "credits",
+      },
+      "ref": null,
+      "rendered": Array [
+        "Created by ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Guglielmo Turco",
+            "href": "//guglielmo-turco.com",
+            "rel": "noopener noreferrer",
+            "target": "_blank",
+          },
+          "ref": null,
+          "rendered": "Guglielmo Turco",
+          "type": "a",
+        },
+      ],
+      "type": "p",
+    },
     "type": "footer",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -251,10 +299,58 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Footer test",
+        "children": <p
+          className="credits"
+>
+          Created by 
+          <a
+                    href="//guglielmo-turco.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+          >
+                    Guglielmo Turco
+          </a>
+</p>,
+        "className": "footer",
       },
       "ref": null,
-      "rendered": "Footer test",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Created by ",
+            <a
+              href="//guglielmo-turco.com"
+              rel="noopener noreferrer"
+              target="_blank"
+>
+              Guglielmo Turco
+</a>,
+          ],
+          "className": "credits",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Created by ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Guglielmo Turco",
+              "href": "//guglielmo-turco.com",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+            },
+            "ref": null,
+            "rendered": "Guglielmo Turco",
+            "type": "a",
+          },
+        ],
+        "type": "p",
+      },
       "type": "footer",
     },
   ],
@@ -285,9 +381,12 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
+      "children": <h1
+        className="title"
+>
         Fibonacci Calculator
 </h1>,
+      "className": "header",
     },
     "ref": null,
     "rendered": Object {
@@ -296,6 +395,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "Fibonacci Calculator",
+        "className": "title",
       },
       "ref": null,
       "rendered": "Fibonacci Calculator",
@@ -309,9 +409,12 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1>
+        "children": <h1
+          className="title"
+>
           Fibonacci Calculator
 </h1>,
+        "className": "header",
       },
       "ref": null,
       "rendered": Object {
@@ -320,6 +423,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Fibonacci Calculator",
+          "className": "title",
         },
         "ref": null,
         "rendered": "Fibonacci Calculator",

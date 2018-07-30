@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 
-import Footer from '../components/Footer';
+import Footer from '../components/footer/Footer';
 
 describe('<Footer />', () => {
   it('should be defined', () => {
