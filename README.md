@@ -83,9 +83,9 @@ index.js
 The process of this component is to:
     1. get the user input
     2. test the input
-      1. check if the input is a number
-      2. check if the input is higher or equal to 2
-      3. if test pass continue, otherwise, display an error message
+        1. check if the input is a number
+        2. check if the input is higher or equal to 2
+        3. if test pass continue, otherwise, display an error message
     4. submit the input to the engine
     5. return the nth number of the Fibonacci sequence
     6. display a message to the user ( F(n) = nth )
