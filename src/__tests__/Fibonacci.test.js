@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 
-import Fibonacci from '../components/Fibonacci';
+import Fibonacci from '../components/fibonacci/Fibonacci';
 
 describe('<Fibonacci />', () => {
   it('should be defined', () => {
@@ -32,7 +32,7 @@ describe('<Fibonacci />', () => {
       it('should submit the form and get a result', () => {
         inputNumber.simulate('change', {target: {value: 10}});
         form.simulate('submit', { preventDefault () {} });
-        expect(wrapper.state('result')).toEqual(55);
+        expect(`${wrapper.state('result')}`).toEqual("55");
       });
     });
   });

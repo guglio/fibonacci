@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import App from '../components/App';
 
 import Header from '../components/header/Header';
-import Fibonacci from '../components/Fibonacci';
+import Fibonacci from '../components/fibonacci/Fibonacci';
 import Footer from '../components/footer/Footer';
 
 describe('App', () => {
