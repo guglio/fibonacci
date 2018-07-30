@@ -11,7 +11,7 @@ class Fibonacci extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fibonacciN : 2, // interger intered from the user
+      fibonacciN : 2, // integer entered from the user
       message : '', // output message for the user
     }
   }
