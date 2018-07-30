@@ -3,3 +3,14 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+:root {
+  --baseline: 8px;
+  --primary-main:#3849aa;
+  --primary-light:#6e74dc;
+  --primary-dark:#00227a;
+  --primary-text:#fff;
+  --secondary-main:#00838f;
+  --secondary-light:#4fb3bf;
+  --secondary-dark:#005662;
+  --secondary-text:#fff;
+}
