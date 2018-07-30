@@ -6,7 +6,7 @@ class Fibonacci extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fibonacciN : 0,
+      fibonacciN : 2,
       result : 0,
     }
   }
