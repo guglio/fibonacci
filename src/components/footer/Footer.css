@@ -1,0 +1,9 @@
+.footer{
+  padding: 0 16px calc(16px * 4) 16px;
+  position:absolute;
+  bottom:0;
+}
+.credits > a{
+  text-decoration: underline;
+  color: inherit;
+}
