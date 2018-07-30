@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Header from './Header';
+import Header from './header/Header';
 import Fibonacci from './Fibonacci';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 
 class App extends Component {
   render() {
