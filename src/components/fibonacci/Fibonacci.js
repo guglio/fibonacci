@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
+// function to calculate the Fibonacci sequence
 import FibonacciNth from '../../containers/FibonacciNth';
+// errors output
+import { error } from '../../errors';
 
 import './Fibonacci.css';
 
@@ -9,7 +12,7 @@ class Fibonacci extends Component {
     super(props);
     this.state = {
       fibonacciN : 2, // interger intered from the user
-      result : 0, // nth number on the Fibonacci sequence
+      message : '', // output message for the user
     }
   }
 
@@ -18,31 +21,58 @@ class Fibonacci extends Component {
     this.setState(state);
   }
 
-  // function called on submit, that calculate the Fibonacci nth number
-  calculareFibonacci(e){
-    e.preventDefault(); // avoid the default form submit event
-    let result = (FibonacciNth(this.state.fibonacciN)); // calculation
-    this.handleChange({result}); // save the calculation into a state
+  // validate field in the form
+  // if the input is not a valid one, return an error message
+  validateForm(e){
+    // avoid the default form submit event
+    e.preventDefault();
+    // shorter variable name and more readable
+    let num = this.state.fibonacciN;
+    // if the numer is less than 2, return false
+    let numInRange = num >= 2;
+    // create a custom error message
+    let errorMessage = numInRange ? false : error.NUM_NOT_IN_RANGE;
+
+    // if the errorMessage exists, don't calculate
+    // but show the error message as result
+    errorMessage ?
+      this.handleChange({message : `Error: ${errorMessage}`})
+      : this.calculareFibonacci(num);
+  }
+
+  // function called after the input is validated
+  // that calculate the Fibonacci nth number
+  calculareFibonacci(){
+    // shorter variable name and more readable
+    let num = this.state.fibonacciN;
+    // calculate the Fibonacci nth number
+    let result = FibonacciNth(num);
+    // set the result's message for the user
+    let message = `F(${num}) = ${result}`;
+    // save the calculation into a state to display to the user
+    this.handleChange({message});
   }
 
   // reset the form to the original state
   resetForm(){
-    this.handleChange({fibonacciN : 2,result : 0});
+    this.handleChange({fibonacciN : 2, message: ''});
   }
 
   render() {
-    const { fibonacciN, result} = this.state;
+    const { fibonacciN, message} = this.state;
+
     return (
       <div className="fibonacci">
         <form
-          onSubmit={(e) => this.calculareFibonacci(e)}
+          onSubmit={(e) => this.validateForm(e)}
           id="formFibonacci"
         >
           <input
             type='number'
-            value={fibonacciN}
-            onChange={(e) => this.handleChange({fibonacciN : e.target.value})} id='fibonacciNum'
+            id='fibonacciNum'
             className='input input-number'
+            value={fibonacciN}
+            onChange={(e) => this.handleChange({fibonacciN : e.target.value})}
             autoComplete='off'
           />
           <div className="btn-group">
@@ -64,7 +94,7 @@ class Fibonacci extends Component {
           </div>
         </form>
         <div id='FibonacciNth' className='result'>
-          <p>{result !== 0 && `The ${fibonacciN} nth of the Fibonacci sequence is ${result}`}</p>
+          <p>{message}</p>
         </div>
       </div>
     )
