@@ -1,0 +1,29 @@
+.fibonacci{
+  padding: 0 calc(8px * 2);
+  margin-top: calc(8px * 3);
+}
+.fibonacci input,
+.fibonacci button{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.input{
+  width: 280px;
+  font-size: calc(8px * 2);
+  padding: calc(8px * 1) calc(8px * 2);
+}
+.btn{
+  padding: calc(8px * 1) calc(8px * 2);
+  border: 1px solid;
+  border-color: #00227b;
+  font-size: calc(8px * 2);
+  background: #fff;
+  color: #00227b;
+  transition: background-color .3s, color .3s, border-color .3s;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #6f74dd;
+  color:#fff;
+  border-color: #6f74dd;
+}
