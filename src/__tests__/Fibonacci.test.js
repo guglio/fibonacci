@@ -13,6 +13,7 @@ describe('<Fibonacci />', () => {
     let form = wrapper.find('form');
     let inputNumber = wrapper.find('input[type="number"]');
     let submitButton = wrapper.find('button[type="submit"]');
+    let resetButton = wrapper.find('button[type="reset"]');
     it('is present', () => {
       expect(form.exists()).toBe(true)
     });
@@ -33,6 +34,16 @@ describe('<Fibonacci />', () => {
         inputNumber.simulate('change', {target: {value: 10}});
         form.simulate('submit', { preventDefault () {} });
         expect(`${wrapper.state('result')}`).toEqual("55");
+      });
+    });
+    describe('Reset button', () => {
+      it('is present', () => {
+        expect(resetButton.exists()).toBe(true)
+      });
+      it('should reset the form to defaults', () => {
+        resetButton.simulate('click');
+        expect(wrapper.state('result')).toEqual(0);
+        expect(wrapper.state('fibonacciN')).toEqual(2);
       });
     });
   });
