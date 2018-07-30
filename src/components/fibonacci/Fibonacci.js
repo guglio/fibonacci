@@ -42,24 +42,26 @@ class Fibonacci extends Component {
             className='input input-number'
             autoComplete='off'
           />
-          <button
-            type='submit'
-            id='submit'
-            className="btn btn-submit"
-          >
-            Calculate
-          </button>
-          <button
-            type='reset'
-            id='reset'
-            className="btn btn-reset"
-            onClick={() => this.resetForm()}
-          >
-            Reset
-          </button>
+          <div className="btn-group">
+            <button
+              type='submit'
+              id='submit'
+              className="btn btn-submit"
+            >
+              Calculate
+            </button>
+            <button
+              type='reset'
+              id='reset'
+              className="btn btn-reset"
+              onClick={() => this.resetForm()}
+            >
+              Reset
+            </button>
+          </div>
         </form>
         <div id='FibonacciNth' className='result'>
-          {result !== 0 && `The ${fibonacciN} nth of the Fibonacci sequence is ${result}`}
+          <p>{result !== 0 && `The ${fibonacciN} nth of the Fibonacci sequence is ${result}`}</p>
         </div>
       </div>
     )
