@@ -1,6 +1,6 @@
 .fibonacci{
-  padding: 0 calc(8px * 2);
-  margin-top: calc(8px * 3);
+  padding: 0 calc(var(--baseline) * 2);
+  margin-top: calc(var(--baseline) * 3);
 }
 .fibonacci input,
 .fibonacci button{
@@ -9,21 +9,42 @@
 }
 .input{
   width: 280px;
-  font-size: calc(8px * 2);
-  padding: calc(8px * 1) calc(8px * 2);
+  font-size: calc(var(--baseline) * 2);
+  padding: calc(var(--baseline) * 1) calc(var(--baseline) * 2);
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.btn-group{
+  padding: calc(var(--baseline) * 2) 0;
+}
+.btn-group > .btn{
+  margin-right: calc(var(--baseline) * 2);
 }
 .btn{
-  padding: calc(8px * 1) calc(8px * 2);
+  padding: calc(var(--baseline) * 1) calc(var(--baseline) * 2);
   border: 1px solid;
-  border-color: #00227b;
-  font-size: calc(8px * 2);
-  background: #fff;
-  color: #00227b;
+  font-size: calc(var(--baseline) * 2);
   transition: background-color .3s, color .3s, border-color .3s;
   cursor: pointer;
 }
-.btn:hover{
-  background-color: #6f74dd;
-  color:#fff;
-  border-color: #6f74dd;
+.btn-submit{
+  border-color: var(--primary-dark);
+  color: var(--primary-dark);
+}
+.btn-submit:hover{
+  background-color: var(--primary-main);
+  color:var(--primary-text);
+  border-color: var(--primary-light);
+}
+.btn-reset{
+  border-color:var(--secondary-dark);
+  color:var(--secondary-dark);
+}
+.btn-reset:hover{
+  background-color: var(--secondary-main);
+  color:var(--secondary-text);
+  border-color: var(--secondary-light);
 }
