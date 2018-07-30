@@ -8,21 +8,24 @@ class Fibonacci extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fibonacciN : 2,
-      result : 0,
+      fibonacciN : 2, // interger intered from the user
+      result : 0, // nth number on the Fibonacci sequence
     }
   }
 
+  // handle the state change
   handleChange(state){
     this.setState(state);
   }
 
+  // function called on submit, that calculate the Fibonacci nth number
   calculareFibonacci(e){
-    e.preventDefault();
-    let result = (FibonacciNth(this.state.fibonacciN));
-    this.handleChange({result});
+    e.preventDefault(); // avoid the default form submit event
+    let result = (FibonacciNth(this.state.fibonacciN)); // calculation
+    this.handleChange({result}); // save the calculation into a state
   }
 
+  // reset the form to the original state
   resetForm(){
     this.handleChange({fibonacciN : 2,result : 0});
   }
