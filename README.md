@@ -108,14 +108,17 @@ __MacOS__
 Open terminal and type:
 ```shell
 git clone https://github.com/guglio/fibonacci.git
+cd fibonacci
+npm install
 ```
 
 ## Running the application
 
-To start the development environment, open terminal and type:
+To start the development environment run in the project directory the following command:
 ```shell
 npm start
 ```
+
 Then open the browser and type in the address bar [`http://localhost:3000/`](http://localhost:3000/)
 
 ## Testing the application
@@ -142,13 +145,13 @@ The `__snapshots__` folder contains the snapshot of the application.<br>
 For more information on snapshot testing, here is the official documentation<br>
 [Snapshot Testing with Jest](https://jestjs.io/docs/en/snapshot-testing#snapshot-testing-with-jest)
 
-To run the tests, open terminal and type:
+To test the application, run in the project directory the following command:
 ```shell
 npm test
 ```
 ## Create a production version
 
-When you're ready to deploy to production, open terminal and type:
+When you're ready to deploy to production run in the project directory the following command:
 ```shell
 npm run build
 ```
