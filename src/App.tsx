@@ -1,15 +1,14 @@
-import Header from "./components/header/Header";
-import Fibonacci from "./components/fibonacci/Fibonacci";
-import Footer from "./components/footer/Footer";
-import "./App.css";
+import Header from './components/Header';
+import Fibonacci from './components/Fibonacci';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
+    <div className='mx-auto flex'>
       <Header />
       <Fibonacci />
       <Footer />
-    </>
+    </div>
   );
 }
 
