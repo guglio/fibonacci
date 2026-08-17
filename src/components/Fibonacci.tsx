@@ -4,13 +4,14 @@ import React, { useCallback, useState } from 'react';
 import { useFibonacciNth } from '../utils/useFibonacciNth';
 
 const Fibonacci = () => {
-  const [fibonacciN, setFibonacciN] = useState(2);
+  const [fibonacciN, setFibonacciN] = useState<undefined | number>(undefined);
   const [message, setMessage] = useState('');
   const { fibonacci } = useFibonacciNth(fibonacciN);
 
-  const calculateDisable = useCallback(() => {
-    return fibonacciN < 2;
-  }, [fibonacciN]);
+  const calculateDisable = useCallback(
+    () => (fibonacciN ? +fibonacciN < 2 : false),
+    [fibonacciN],
+  );
 
   // function called after the input is validated
   // that calculate the Fibonacci nth number
@@ -27,7 +28,7 @@ const Fibonacci = () => {
 
   // reset the form to the original state
   const resetForm = () => {
-    setFibonacciN(2);
+    setFibonacciN(undefined);
     setMessage('');
   };
 
@@ -39,10 +40,12 @@ const Fibonacci = () => {
           id='fibonacciNum'
           className='input input-number'
           value={fibonacciN}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setFibonacciN(+e.target.value)
-          }
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            if (e?.target?.value && Number(e?.target?.value))
+              setFibonacciN(+e?.target?.value);
+          }}
           autoComplete='off'
+          placeholder={'2'}
         />
         <div className='btn-group'>
           <button
