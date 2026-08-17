@@ -4,18 +4,22 @@ import React, { useCallback, useState } from 'react';
 import { useFibonacciNth } from '../utils/useFibonacciNth';
 
 const Fibonacci = () => {
-  const [fibonacciN, setFibonacciN] = useState<undefined | number>(undefined);
+  const [fibonacciN, setFibonacciN] = useState<number | undefined>(undefined);
   const [message, setMessage] = useState('');
   const { fibonacci } = useFibonacciNth(fibonacciN);
 
   const calculateDisable = useCallback(
-    () => (fibonacciN ? +fibonacciN < 2 : false),
+    () => {
+      if (fibonacciN === undefined) return true;
+      return +fibonacciN < 2;
+    },
     [fibonacciN],
   );
 
   // function called after the input is validated
   // that calculate the Fibonacci nth number
-  const calculareFibonacci = () => {
+  const calculateFibonacci = () => {
+    if (fibonacciN === undefined) return;
     // shorter variable name and more readable
     let num = fibonacciN;
     // calculate the Fibonacci nth number
@@ -39,10 +43,18 @@ const Fibonacci = () => {
           // type="number"
           id='fibonacciNum'
           className='input input-number'
-          value={fibonacciN}
+          value={fibonacciN ?? ''}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            if (e?.target?.value && Number(e?.target?.value))
-              setFibonacciN(+e?.target?.value);
+            const value = e.target.value;
+            if (value === '') {
+              setFibonacciN(undefined);
+            } else {
+              const num = Number(value);
+              if (!isNaN(num)) {
+                setFibonacciN(num);
+              }
+              // if NaN, do nothing (keep previous state)
+            }
           }}
           autoComplete='off'
           placeholder={'2'}
@@ -53,7 +65,7 @@ const Fibonacci = () => {
             id='submit'
             className='btn btn-submit'
             disabled={calculateDisable()}
-            onClick={() => calculareFibonacci()}
+            onClick={() => calculateFibonacci()}
           >
             Calculate
           </button>
