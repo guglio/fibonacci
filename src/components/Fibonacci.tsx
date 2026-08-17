@@ -8,26 +8,14 @@ const Fibonacci = () => {
   const [message, setMessage] = useState('');
   const { fibonacci } = useFibonacciNth(fibonacciN);
 
-  const calculateDisable = useCallback(
-    () => {
-      if (fibonacciN === undefined) return true;
-      return +fibonacciN < 2;
-    },
-    [fibonacciN],
-  );
+  const calculateDisable = useCallback(() => {
+    if (fibonacciN === undefined) return true;
+    return +fibonacciN < 2;
+  }, [fibonacciN]);
 
-  // function called after the input is validated
-  // that calculate the Fibonacci nth number
   const calculateFibonacci = () => {
     if (fibonacciN === undefined) return;
-    // shorter variable name and more readable
-    let num = fibonacciN;
-    // calculate the Fibonacci nth number
-    let result = fibonacci;
-    // set the result's message for the user
-    let message = `F(${num}) = ${result}`;
-    // save the calculation into a state to display to the user
-    setMessage(message);
+    setMessage(`F(${fibonacciN}) = ${fibonacci}`);
   };
 
   // reset the form to the original state
@@ -40,7 +28,6 @@ const Fibonacci = () => {
     <div className='fibonacci'>
       <div id='formFibonacci'>
         <input
-          // type="number"
           id='fibonacciNum'
           className='input input-number'
           value={fibonacciN ?? ''}
