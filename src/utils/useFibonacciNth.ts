@@ -1,13 +1,8 @@
-import { create, all } from 'mathjs';
-
+import { create, all } from "mathjs";
 const mathjs = create(all);
+mathjs.config({ number: "BigNumber" });
 
-mathjs.config({
-  number: 'BigNumber', // Set type of number to be 'BigNumber'
-  precision: 20, // Number of significant digits for BigNumbers
-});
-
-const FibonacciNth = (num = 2) => {
+export const useFibonacciNth = (num = 2) => {
   // calculate the nth on the Fibonacci sequence with iterable object
   let [curr, prev] = [1, 0];
   while (num-- > 0) {
@@ -19,7 +14,5 @@ const FibonacciNth = (num = 2) => {
       mathjs.bignumber(curr),
     ];
   }
-  return prev;
+  return { fibonacci: prev };
 };
-
-export default FibonacciNth;
