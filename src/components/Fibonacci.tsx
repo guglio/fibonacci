@@ -25,7 +25,7 @@ const Fibonacci = () => {
       <div id='formFibonacci' className='space-y-6'>
         <input
           id='fibonacciNum'
-          className='input input-number h-12'
+          className='input input-number h-12 bg-yellow-100'
           value={fibonacciN ?? ''}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const value = e.target.value;
