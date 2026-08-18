@@ -17,7 +17,7 @@ function App() {
               href='https://guglielmo-turco.com'
               target='_blank'
               rel='noopener noreferrer'
-              className='underline-none uppercase'
+              className='text-black underline-none uppercase'
             >
               Guglielmo Turco
             </a>
