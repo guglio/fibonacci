@@ -6,6 +6,7 @@ function App() {
       <div className='w-5xl mx-auto flex flex-col min-h-screen'>
         <header className='pt-4'>
           <h1 className='text-3xl font-bold uppercase'>Fibonacci Calculator</h1>
+          <p className='description'>Calculate the nth Fibonacci number instantly.</p>
         </header>
         <div className='flex-1'>
           <Fibonacci />

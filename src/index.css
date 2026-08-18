@@ -1,1 +1,16 @@
 @import 'tailwindcss';
+
+a {
+  @apply text-black underline-none;
+}
+a:visited {
+  @apply text-black;
+}
+
+.description {
+  @apply text-sm text-gray-400 mt-2;
+}
+
+.formula-text {
+  @apply text-lg font-mono text-gray-600 mt-4;
+}
