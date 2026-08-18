@@ -1,15 +1,17 @@
-import Header from "./components/header/Header";
-import Fibonacci from "./components/fibonacci/Fibonacci";
-import Footer from "./components/footer/Footer";
-import "./App.css";
+import Fibonacci from './components/Fibonacci';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Fibonacci />
-      <Footer />
-    </>
+    <div className='min-h-screen w-full'>
+      <div className='w-5xl mx-auto flex flex-col min-h-screen'>
+        <header className='pt-4'>
+          <h1 className='text-3xl font-bold uppercase'>Fibonacci Calculator</h1>
+        </header>
+        <div className='flex-1'>
+          <Fibonacci />
+        </div>
+      </div>
+    </div>
   );
 }
 
