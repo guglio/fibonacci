@@ -21,7 +21,7 @@ const Fibonacci = () => {
   };
 
   return (
-    <div className='bg-yellow-100 p-4'>
+    <div className='p-4'>
       <div id='formFibonacci' className='space-y-6'>
         <input
           id='fibonacciNum'
