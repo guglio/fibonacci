@@ -43,7 +43,7 @@ const Fibonacci = () => {
         />
         <div className='btn-group flex gap-6 mt-4 text-white'>
           <button
-            className='btn btn-reset p-3 text-lg bg-emerald-700 rounded-md'
+            className='btn btn-reset p-3 text-lg bg-emerald-700 rounded-md disabled:opacity-50'
             disabled={calculateDisable()}
             onClick={() => calculateFibonacci()}
           >
