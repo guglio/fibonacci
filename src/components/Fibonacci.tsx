@@ -26,10 +26,10 @@ const Fibonacci = () => {
 
   return (
     <div className='fibonacci'>
-      <div id='formFibonacci'>
+      <div id='formFibonacci' className='space-y-4'>
         <input
           id='fibonacciNum'
-          className='input input-number'
+          className='input input-number h-10'
           value={fibonacciN ?? ''}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const value = e.target.value;
@@ -46,7 +46,7 @@ const Fibonacci = () => {
           autoComplete='off'
           placeholder={'2'}
         />
-        <div className='btn-group'>
+        <div className='btn-group mt-4'>
           <button
             type='submit'
             id='submit'
