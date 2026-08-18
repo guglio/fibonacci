@@ -21,11 +21,10 @@ const Fibonacci = () => {
   };
 
   return (
-    <div className='p-4'>
-      <div id='formFibonacci' className='space-y-6'>
+    <div className='pt-4'>
+      <div className='flex flex-col gap-2'>
         <input
-          id='fibonacciNum'
-          className='input input-number h-12'
+          className='border-solid rounded-md border-black border p-2 w-sm'
           value={fibonacciN ?? ''}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const value = e.target.value;
@@ -36,33 +35,28 @@ const Fibonacci = () => {
               if (!isNaN(num)) {
                 setFibonacciN(num);
               }
-              // if NaN, do nothing (keep previous state)
             }
           }}
           autoComplete='off'
           placeholder={'2'}
         />
-        <div className='btn-group flex space-x-6 mt-6'>
+        <div className='btn-group flex gap-4 text-white'>
           <button
-            type='submit'
-            id='submit'
-            className='btn btn-submit px-6 py-3'
+            className='btn btn-reset p-2 bg-emerald-700 rounded-md'
             disabled={calculateDisable()}
             onClick={() => calculateFibonacci()}
           >
             Calculate
           </button>
           <button
-            type='reset'
-            id='reset'
-            className='btn btn-reset px-6 py-3'
+            className='btn btn-reset p-2 bg-blue-400 rounded-md'
             onClick={() => resetForm()}
           >
             Reset
           </button>
         </div>
       </div>
-      <div id='FibonacciNth' className='result'>
+      <div>
         <p>{message}</p>
       </div>
     </div>
