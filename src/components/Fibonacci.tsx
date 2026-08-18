@@ -30,13 +30,13 @@ const Fibonacci = () => {
             const value = e.target.value;
             if (value === '') {
               setFibonacciN(undefined);
-              setResult('');
             } else {
               const num = Number(value);
               if (!isNaN(num)) {
                 setFibonacciN(num);
               }
             }
+            setResult('');
           }}
           autoComplete='off'
           placeholder={'2'}
