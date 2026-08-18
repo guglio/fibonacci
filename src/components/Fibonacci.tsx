@@ -1,24 +1,20 @@
 import React, { useCallback, useState } from 'react';
 
-// function to calculate the Fibonacci sequence
-import { useFibonacciNth } from '../utils/useFibonacciNth';
+import { fibonacciValue } from '../utils/fibonacciMath';
 
 const Fibonacci = () => {
   const [fibonacciN, setFibonacciN] = useState<number | undefined>(undefined);
   const [message, setMessage] = useState('');
-  const { fibonacci } = useFibonacciNth(fibonacciN);
-
   const calculateDisable = useCallback(() => {
     if (fibonacciN === undefined) return true;
     return +fibonacciN < 2;
   }, [fibonacciN]);
 
-  const calculateFibonacci = () => {
+  const calculateFibonacci = useCallback(() => {
     if (fibonacciN === undefined) return;
-    setMessage(`F(${fibonacciN}) = ${fibonacci}`);
-  };
+    setMessage(`F(${fibonacciN}) = ${fibonacciValue(fibonacciN)}`);
+  }, [fibonacciN]);
 
-  // reset the form to the original state
   const resetForm = () => {
     setFibonacciN(undefined);
     setMessage('');

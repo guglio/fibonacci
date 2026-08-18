@@ -2,7 +2,7 @@ import { create, all, type BigNumber } from 'mathjs';
 const mathjs = create(all);
 mathjs.config({ number: 'BigNumber' });
 
-export const useFibonacciNth = (num = 2) => {
+export const fibonacciValue = (num = 2) => {
   let [curr, prev]: [BigNumber, BigNumber] = [
     mathjs.bignumber(1),
     mathjs.bignumber(0),
@@ -13,5 +13,5 @@ export const useFibonacciNth = (num = 2) => {
       mathjs.bignumber(curr),
     ];
   }
-  return { fibonacci: prev };
+  return prev;
 };
