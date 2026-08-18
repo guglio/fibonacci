@@ -17,7 +17,10 @@ A simple React + TypeScript + Vite app that computes the nth Fibonacci number us
 
 ### Installation
 ```bash
-git clone <your-repo-url>
+# Using HTTPS
+git clone https://github.com/guglio/fibonacci.git
+# or using SSH
+git clone git@github.com:guglio/fibonacci.git
 cd fibonacci
 npm install
 ```
@@ -50,4 +53,5 @@ npm run test:ui   # opens Vitest UI
 Create new `.test.ts` or `.test.tsx` files inside `src/tests/`. Vitest will pick them up automatically.
 
 ---
+
 *Built with Vite, React, TypeScript, and Tailwind CSS.*
