@@ -1,75 +1,53 @@
-# React + TypeScript + Vite
+# Fibonacci Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React + TypeScript + Vite app that computes the nth Fibonacci number using an iterative algorithm with `bigint` for arbitrary precision.
 
-Currently, two official plugins are available:
+## Features
+- Input field to specify `n` (non‑negative integer)
+- **Calculate** button to compute `fib(n)`
+- **Reset** button to clear input and result
+- Displays the formula used: `fib(n) = fib(n‑1) + fib(n‑2)`
+- Result shown as plain text (bigint)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting Started
 
-## React Compiler
+### Prerequisites
+- Node.js ≥ 20 (tested on v20.12.0)
+- npm ≥ 10
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### Installation
+```bash
+git clone <your-repo-url>
+cd fibonacci
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### Development
+```bash
+npm run dev   # starts Vite dev server at http://localhost:5173
 ```
+
+### Build
+```bash
+npm run build # produces optimized bundle in ./dist
+```
+
+## Testing
+
+The project uses **Vitest** with **React Testing Library** for unit and UI tests.
+
+### Run tests
+```bash
+npm test          # headless mode
+npm run test:ui   # opens Vitest UI
+```
+
+### Test suite
+- **Unit tests**: `src/tests/fibonacciMath.test.ts` – validates the `fibonacciValue` function for inputs 0‑10.
+- **UI/behavior tests**: `src/tests/Fibonacci.test.tsx` – renders the component, interacts with input and buttons, verifies calculation, reset, and disabled state.
+
+### Adding new tests
+Create new `.test.ts` or `.test.tsx` files inside `src/tests/`. Vitest will pick them up automatically.
+
+---
+*Built with Vite, React, TypeScript, and Tailwind CSS.*
