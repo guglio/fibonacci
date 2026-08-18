@@ -4,7 +4,7 @@ import { fibonacciValue } from '../utils/fibonacciMath';
 
 const Fibonacci = () => {
   const [fibonacciN, setFibonacciN] = useState<number | undefined>(undefined);
-  const [message, setMessage] = useState('');
+  const [result, setResult] = useState<string>('');
   const calculateDisable = useCallback(() => {
     if (fibonacciN === undefined) return true;
     return +fibonacciN < 2;
@@ -12,12 +12,12 @@ const Fibonacci = () => {
 
   const calculateFibonacci = useCallback(() => {
     if (fibonacciN === undefined) return;
-    setMessage(`F(${fibonacciN}) = ${fibonacciValue(fibonacciN)}`);
+    setResult(`${fibonacciValue(fibonacciN)}`);
   }, [fibonacciN]);
 
   const resetForm = () => {
     setFibonacciN(undefined);
-    setMessage('');
+    setResult('');
   };
 
   return (
@@ -30,6 +30,7 @@ const Fibonacci = () => {
             const value = e.target.value;
             if (value === '') {
               setFibonacciN(undefined);
+              setResult('');
             } else {
               const num = Number(value);
               if (!isNaN(num)) {
@@ -56,8 +57,10 @@ const Fibonacci = () => {
           </button>
         </div>
       </div>
-      <div>
-        <p>{message}</p>
+      <div className='mt-2'>
+        <p className='formula-text'>
+          F({fibonacciN ?? 'x'}) = {result !== '' ? result : 'y'}
+        </p>
       </div>
     </div>
   );
