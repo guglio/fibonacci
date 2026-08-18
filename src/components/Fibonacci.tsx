@@ -1,70 +1,62 @@
 import React, { useCallback, useState } from 'react';
 
-// function to calculate the Fibonacci sequence
-import { useFibonacciNth } from '../utils/useFibonacciNth';
+import { fibonacciValue } from '../utils/fibonacciMath';
 
 const Fibonacci = () => {
-  const [fibonacciN, setFibonacciN] = useState(2);
+  const [fibonacciN, setFibonacciN] = useState<number | undefined>(undefined);
   const [message, setMessage] = useState('');
-  const { fibonacci } = useFibonacciNth(fibonacciN);
-
   const calculateDisable = useCallback(() => {
-    return fibonacciN < 2;
+    if (fibonacciN === undefined) return true;
+    return +fibonacciN < 2;
   }, [fibonacciN]);
 
-  // function called after the input is validated
-  // that calculate the Fibonacci nth number
-  const calculareFibonacci = () => {
-    // shorter variable name and more readable
-    let num = fibonacciN;
-    // calculate the Fibonacci nth number
-    let result = fibonacci;
-    // set the result's message for the user
-    let message = `F(${num}) = ${result}`;
-    // save the calculation into a state to display to the user
-    setMessage(message);
-  };
+  const calculateFibonacci = useCallback(() => {
+    if (fibonacciN === undefined) return;
+    setMessage(`F(${fibonacciN}) = ${fibonacciValue(fibonacciN)}`);
+  }, [fibonacciN]);
 
-  // reset the form to the original state
   const resetForm = () => {
-    setFibonacciN(2);
+    setFibonacciN(undefined);
     setMessage('');
   };
 
   return (
-    <div className='fibonacci'>
-      <div id='formFibonacci'>
+    <div className='pt-4'>
+      <div className='flex flex-col gap-2'>
         <input
-          // type="number"
-          id='fibonacciNum'
-          className='input input-number'
-          value={fibonacciN}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setFibonacciN(+e.target.value)
-          }
+          className='border-solid rounded-md border-black border p-2 w-sm'
+          value={fibonacciN ?? ''}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const value = e.target.value;
+            if (value === '') {
+              setFibonacciN(undefined);
+            } else {
+              const num = Number(value);
+              if (!isNaN(num)) {
+                setFibonacciN(num);
+              }
+            }
+          }}
           autoComplete='off'
+          placeholder={'2'}
         />
-        <div className='btn-group'>
+        <div className='btn-group flex gap-4 text-white'>
           <button
-            type='submit'
-            id='submit'
-            className='btn btn-submit'
+            className='btn btn-reset p-2 bg-emerald-700 rounded-md'
             disabled={calculateDisable()}
-            onClick={() => calculareFibonacci()}
+            onClick={() => calculateFibonacci()}
           >
             Calculate
           </button>
           <button
-            type='reset'
-            id='reset'
-            className='btn btn-reset'
+            className='btn btn-reset p-2 bg-blue-400 rounded-md'
             onClick={() => resetForm()}
           >
             Reset
           </button>
         </div>
       </div>
-      <div id='FibonacciNth' className='result'>
+      <div>
         <p>{message}</p>
       </div>
     </div>
