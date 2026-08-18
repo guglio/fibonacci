@@ -24,6 +24,7 @@ const Fibonacci = () => {
     <div className='pt-4'>
       <div className='flex flex-col gap-2'>
         <input
+          data-testid="fibonacci-input"
           className='border-solid rounded-md border-black border h-12 p-3 text-lg w-64'
           value={fibonacciN ?? ''}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +44,7 @@ const Fibonacci = () => {
         />
         <div className='btn-group flex gap-6 mt-4 text-white'>
           <button
+            data-testid="calculate-button"
             className='btn btn-reset p-3 text-lg bg-emerald-700 rounded-md disabled:opacity-50'
             disabled={calculateDisable()}
             onClick={() => calculateFibonacci()}
@@ -50,6 +52,7 @@ const Fibonacci = () => {
             Calculate
           </button>
           <button
+            data-testid="reset-button"
             className='btn btn-reset p-3 text-lg bg-blue-400 rounded-md'
             onClick={() => resetForm()}
           >
@@ -58,7 +61,7 @@ const Fibonacci = () => {
         </div>
       </div>
       <div className='mt-2'>
-        <p className='formula-text'>
+        <p data-testid="formula-text" className='formula-text'>
           F({fibonacciN ?? 'x'}) = {result !== '' ? result : 'y'}
         </p>
       </div>
